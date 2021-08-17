@@ -5,13 +5,26 @@
 	background: linear-gradient(to right, white, rgb(226, 226, 226), white);
 
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
 
+.scoreboard
+{
+	display: flex;
+
+	position: absolute;
+	top: 0;
+}
+
+.scoreboard h2
+{
+	margin: 1rem;
+}
+
 .cards-container
 {
-	width: 100%;
 	min-height: 85%;
 
 	display: flex;

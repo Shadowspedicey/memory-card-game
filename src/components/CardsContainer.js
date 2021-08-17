@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import uniqid from "uniqid";
 import Card from "./Card";
 
-const CardsContainer = () =>
+const CardsContainer = props =>
 {
 	const [cards, setCards] =
 	useState
@@ -31,7 +31,8 @@ const CardsContainer = () =>
 				if (card.key === key) return {...card, clicked: true}
 				else return card;
 			})
-		)
+		);
+		props.icrementScore();
 	};
 
 	const resetGame = () =>
@@ -42,7 +43,8 @@ const CardsContainer = () =>
 			{
 				return {...card, clicked: false}
 			})
-		)
+		);
+		props.resetScore();
 	}
 
 	useEffect(() => setCards(cards.sort(() => Math.random() - 0.5)), [cards]);
