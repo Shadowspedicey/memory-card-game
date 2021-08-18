@@ -41,11 +41,11 @@
 
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: space-around;
 	align-items: center;
 
 	padding: 1rem;
-	margin: 1rem 2rem 1rem 2rem;
+	margin: 1rem 1.5rem;
 }
 
 .clicked
@@ -76,7 +76,7 @@
 .cardImg-container
 {
 	width: 100%;
-	height: 200px;
+	height: 225px;
 	overflow: hidden;
 
 	position: relative;
@@ -84,6 +84,8 @@
 
 .cardImg-container img
 {
+	height: 100%;
+
 	position: absolute;
 	left: 50%;
 	transform: translateX(-50%);

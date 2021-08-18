@@ -1,6 +1,18 @@
 import React, {useState, useEffect} from "react";
 import uniqid from "uniqid";
+import arrayShuffle from  "array-shuffle";
 import Card from "./Card";
+
+import Shadow from "./photos/Shadow.png";
+import ZiadSWidan from "./photos/ZiadSWidan.png";
+import Shehab from "./photos/Shehab.png";
+import Scins from "./photos/Scins.png";
+import Mody from "./photos/Mody.png";
+import Inertia from "./photos/Inertia.png";
+import DLow from "./photos/DLow.png";
+import Osis from  "./photos/Osis.png";
+import Remix from "./photos/Remix.png";
+import ReepsOne from "./photos/ReepsOne.png";
 
 const CardsContainer = props =>
 {
@@ -8,16 +20,16 @@ const CardsContainer = props =>
 	useState
 	(
 		[
-			{name: "Ziad Swidan1", clicked: false, key: uniqid()},
-			{name: "Ziad Swidan2", clicked: false, key: uniqid()},
-			{name: "Ziad Swidan3", clicked: false, key: uniqid()},
-			{name: "Ziad Swidan4", clicked: false, key: uniqid()},
-			{name: "Ziad Swidan5", clicked: false, key: uniqid()},
-			{name: "Ziad Swidan6", clicked: false, key: uniqid()},
-			{name: "Ziad Swidan7", clicked: false, key: uniqid()},
-			{name: "Ziad Swidan8", clicked: false, key: uniqid()},
-			{name: "Ziad Swidan9", clicked: false, key: uniqid()},
-			{name: "Ziad Swidan0", clicked: false, key: uniqid()},
+			{name: "Shadow", photo: Shadow, clicked: false, key: uniqid()},
+			{name: "Ziad Swidan", photo: ZiadSWidan, clicked: false, key: uniqid()},
+			{name: "Shehab", photo: Shehab, clicked: false, key: uniqid()},
+			{name: "Scins", photo: Scins, clicked: false, key: uniqid()},
+			{name: "Mody", photo: Mody, clicked: false, key: uniqid()},
+			{name: "Inertia", photo: Inertia, clicked: false, key: uniqid()},
+			{name: "D-Low", photo: DLow, clicked: false, key: uniqid()},
+			{name: "Osis", photo: Osis, clicked: false, key: uniqid()},
+			{name: "Remix", photo: Remix, clicked: false, key: uniqid()},
+			{name: "Reeps One", photo: ReepsOne, clicked: false, key: uniqid()},
 		]
 	);
 
@@ -45,9 +57,9 @@ const CardsContainer = props =>
 			})
 		);
 		props.resetScore();
-	}
+	};
 
-	useEffect(() => setCards(cards.sort(() => Math.random() - 0.5)), [cards]);
+	useEffect(() => setCards(arrayShuffle([...cards])), [props.score]);
 
 	return(
 		<div className="cards-container">

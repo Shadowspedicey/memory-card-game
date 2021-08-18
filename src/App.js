@@ -17,7 +17,7 @@ const App = () =>
     <div className="App">
 			<Scoreboard score={score} highScore={highScore}/>
 			<div style={{width: "100%", height: "60px"}}></div>
-			<CardsContainer icrementScore={() => setScore(score + 1)} resetScore={() => setScore(0)}/>
+			<CardsContainer icrementScore={() => setScore(score + 1)} resetScore={() => setScore(0)} score={score}/>
     </div>
   );
 }
