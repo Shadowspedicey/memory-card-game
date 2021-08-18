@@ -59,7 +59,10 @@ const CardsContainer = props =>
 		props.resetScore();
 	};
 
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	useEffect(() => setCards(arrayShuffle([...cards])), [props.score]);
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	useEffect(() => setCards(arrayShuffle([...cards])), []);
 
 	return(
 		<div className="cards-container">
